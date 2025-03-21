@@ -1,4 +1,5 @@
 import Navbar from './Navbar';
+import Accueil from './accueil';
 import logo from '../logo.svg'
 import '../styles/App.css';
 
@@ -6,7 +7,7 @@ function App() {
   return ( 
       <div>
           <Navbar />
-          <h1>Bonjour !</h1>
+    
           
           
         
