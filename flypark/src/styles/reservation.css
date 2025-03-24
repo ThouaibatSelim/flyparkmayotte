@@ -1,0 +1,64 @@
+/* Style général du conteneur */
+.reservation-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  /* Style du titre */
+  .reservation-container h2 {
+    color: #01257d;
+  }
+  
+  /* Style du formulaire */
+  .reservation-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Style des labels */
+  .reservation-container label {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  /* Style des champs de saisie et du select */
+  .reservation-container input,
+  .reservation-container select {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Style du bouton */
+  .reservation-container button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #01257d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Effet au survol du bouton */
+  .reservation-container button:hover {
+    background-color: #00FFFF;
+    color: #01257d;
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 480px) {
+    .reservation-container {
+      width: 90%;
+      padding: 15px;
+    }
+  }
+  

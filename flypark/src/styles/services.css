@@ -1,0 +1,78 @@
+/* Conteneur principal */
+.services-container {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Titre principal */
+  .services-container h2 {
+    color: #01257d;
+    margin-bottom: 20px;
+  }
+  
+  /* Liste des services */
+  .services-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  /* Carte de service */
+  .service-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Effet au survol */
+  .service-card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Titres des services */
+  .service-card h3 {
+    color: #01257d;
+    margin-bottom: 10px;
+  }
+  
+  /* Texte des services */
+  .service-card p {
+    color: #333;
+  }
+  
+  /* Conteneur du bouton devis */
+  .devis-container {
+    margin-top: 30px;
+  }
+  
+  /* Bouton devis */
+  .btn-devis {
+    padding: 12px 20px;
+    background-color: #01257d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Effet au survol du bouton */
+  .btn-devis:hover {
+    background-color: #00FFFF;
+    color: #01257d;
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .services-list {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  

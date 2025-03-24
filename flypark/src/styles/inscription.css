@@ -1,0 +1,80 @@
+/* Style général du conteneur d'inscription */
+.inscription-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  /* Style du titre */
+  .inscription-container h2 {
+    color: #01257d;
+  }
+  
+  /* Style du formulaire */
+  .inscription-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Style des labels */
+  .inscription-container label {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  /* Style des champs de saisie */
+  .inscription-container input {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Style du bouton */
+  .inscription-container button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #01257d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Effet au survol du bouton */
+  .inscription-container button:hover {
+    background-color: #00FFFF;
+    color: #01257d;
+  }
+  
+  /* Style du texte en bas */
+  .inscription-container p {
+    margin-top: 10px;
+  }
+  
+  /* Style du lien vers la page de connexion */
+  .inscription-container a {
+    color: #01257d;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .inscription-container a:hover {
+    color: #00FFFF;
+    text-decoration: underline;
+  }
+  
+  /* Responsiveness pour les petits écrans */
+  @media screen and (max-width: 480px) {
+    .inscription-container {
+      width: 90%;
+      padding: 15px;
+    }
+  }
+  

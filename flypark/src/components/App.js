@@ -1,22 +1,30 @@
-import Navbar from './Navbar';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Accueil from './accueil';
-import logo from '../logo.svg'
-import '../styles/App.css';
+import Reservation from './reservation';
+import Services from './services';
+import APropos from './apropos';
+import Connexion from './connexion';
+import Inscription from './inscription';
+import Navbar from './Navbar';
 
 function App() {
-  return ( 
-      <div>
-          <Navbar />
-    
-          
-          
-        
+  return (
+    <Router>
+      <Navbar />
+      <div className="content">
+        {/* Routes - affichage conditionnel des pages */}
+        <Routes>
+          <Route path="/" element={<Accueil />} />
+          <Route path="/reservation" element={<Reservation />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/apropos" element={<APropos />} />
+          <Route path="/connexion" element={<Connexion />} />
+          <Route path="/inscription" element={<Inscription />} />
+        </Routes>
       </div>
-      
-    
-      
-      
-      );
-};
+    </Router>
+  );
+}
 
 export default App;
