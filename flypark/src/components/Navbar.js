@@ -1,19 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import '../styles/navbar.css'; 
 
 function Navbar() {
             return (
                 <nav className="navbar">
-                <h1>Fly Park Mayotte</h1>
-                <ul>
-                <li><a href="/">Accueil</a></li>
-                <li><a href= "/reservation">Réservation</a></li>
-                <li><a href= "/services">Services</a></li>
-                <li><a href= "/apropos"> A Propos</a></li>
-                <li><a href= "/connexion">Connexion</a></li>
-                <li><a href= "/inscription"></a></li>
-       </ul> 
-    </nav>     
+                    <h1>Fly Park Mayotte</h1>
+                    <ul>
+                        <li><link to="/accueil">Accueil</link></li>
+                        <li><link to= "/reservation">Réservation</link></li>
+                        <li><link to= "/services">Services</link></li>
+                        <li><link to= "/apropos"> A Propos</link></li>
+                        <li><link to= "/connexion">Connexion</link></li>
+                        <li><link to= "/inscription">Inscription</link></li>
+                    </ul> 
+                </nav>     
     );
 }
 export default Navbar; 
