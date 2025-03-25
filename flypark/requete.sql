@@ -4,7 +4,7 @@ CREATE DATABASE flyparkmayotte;
 USE flyparkmayotte;
 
 -- Utilisateur
-CREATE TABLE utilisateur (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, nom_utilisateur VARCHAR(200), prenom_utilisateur VARCHAR(200), date_naissance DATE, adresse_mail VARCHAR(200), numero_telephone VARCHAR(200));
+CREATE TABLE utilisateur (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, nom_utilisateur VARCHAR(200), prenom_utilisateur VARCHAR(200), date_naissance DATE, adresse_mail VARCHAR(200), numero_telephone VARCHAR(200), motdepasse VARCHAR(200));
 
 -- Historique
 CREATE TABLE historique (id NOT NULL PRIMARY KEY AUTO_INCREMENT, id_reservation INT FOREIGN KEY NOT NULL);
@@ -17,3 +17,5 @@ CREATE TABLE reservation (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, id_utilisa
 
 -- Equipe
 CREATE TABLE equipe (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, nom VARCHAR(200), prenom VARCHAR(200), poste VARCHAR(255));
+
+CREATE TABLE services (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, services VARCHAR(200), );
