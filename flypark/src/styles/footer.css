@@ -1,9 +1,17 @@
+html {
+    position:relative;
+    min-height: 100%;
+}
+
 .footer {
     background-color: #c1c6d4;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 5px;
+    height: 40px;
     position: absolute;
     bottom: 0;
     width: 100%;
   }
+
+  

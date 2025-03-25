@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Accueil from './accueil';
-import Reservation from './reservation';
-import Services from './services';
-import APropos from './apropos';
-import Connexion from './connexion';
-import Inscription from './inscription';
-import Navbar from './navbar';
-import Footer from './footer';
-import Layout from './layout';
+import Accueil from './Accueil';
+import Reservation from './Reservation';
+import Services from './Services';
+import APropos from './Apropos';
+import Connexion from './Connexion';
+import Inscription from './Inscription';
+import Navbar from './Navbar';
+import Footer from './Footer';
+import Devis from './Devis';
 
 function App() {
   return (
