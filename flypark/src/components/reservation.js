@@ -1,59 +1,70 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/reservation.css"; // Import du fichier CSS
 
 const Reservation = () => {
-  // États pour gérer les informations du formulaire
+  const [parkings, setParkings] = useState([]);
+  const [selectedParking, setSelectedParking] = useState(null);
   const [nom, setNom] = useState("");
   const [email, setEmail] = useState("");
   const [typeAvion, setTypeAvion] = useState("");
   const [date, setDate] = useState("");
 
-  // Fonction pour soumettre le formulaire
+  useEffect(() => {
+    // Simulation de données, en vrai il faudra récupérer depuis une API
+    const parkingData = [
+      { id: 1, dimensions: "20m x 30m", prix: "50€/jour", disponibilite: "10 avril" },
+      { id: 2, dimensions: "25m x 35m", prix: "60€/jour", disponibilite: "12 avril" },
+      { id: 3, dimensions: "30m x 40m", prix: "75€/jour", disponibilite: "15 avril" },
+    ];
+    setParkings(parkingData);
+  }, []);
+
+  const handleReserve = (parking) => {
+    setSelectedParking(parking);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Réservation confirmée pour ${nom} (${typeAvion}) le ${date}`);
+    alert(`Réservation confirmée pour ${nom} (${typeAvion}) le ${date} sur la place ${selectedParking.dimensions}`);
   };
 
   return (
     <div className="reservation-container">
       <h2>Réserver une place de parking</h2>
-      <form onSubmit={handleSubmit}>
-        <label>Nom du pilote :</label>
-        <input
-          type="text"
-          value={nom}
-          onChange={(e) => setNom(e.target.value)}
-          required
-        />
+      <ul className="parking-list">
+        {parkings.map((parking) => (
+          <li key={parking.id} className="parking-item">
+            📏 Dimensions: {parking.dimensions} | 💰 Prix: {parking.prix} | 📅 Dispo: {parking.disponibilite}
+            <button className="btn-reserver" onClick={() => handleReserve(parking)}>Réserver</button>
+          </li>
+        ))}
+      </ul>
 
-        <label>Email :</label>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-
-        <label>Type d'aéronef :</label>
-        <select value={typeAvion} onChange={(e) => setTypeAvion(e.target.value)} required>
-          <option value="">Sélectionner un type</option>
-          <option value="Petit avion">Petit avion (Cessna 172, Piper PA-28)</option>
-          <option value="Avion militaire">Avion militaire (F-16, Rafale)</option>
-          <option value="Moyen-courrier">Avion moyen-courrier (A320, B737)</option>
-          <option value="Long-courrier">Avion long-courrier (B777, A350)</option>
-          <option value="Très gros porteur">Très gros porteur (A380, B747)</option>
-        </select>
-
-        <label>Date de réservation :</label>
-        <input
-          type="date"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-          required
-        />
-
-        <button type="submit">Réserver</button>
-      </form>
+      {selectedParking && (
+        <form className="reservation-form" onSubmit={handleSubmit}>
+          <h3>Réservation pour {selectedParking.dimensions}</h3>
+          <label>Nom du pilote :</label>
+          <input type="text" value={nom} onChange={(e) => setNom(e.target.value)} required />
+          
+          <label>Email :</label>
+          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+          
+          <label>Type d'aéronef :</label>
+          <select value={typeAvion} onChange={(e) => setTypeAvion(e.target.value)} required>
+            <option value="">Sélectionner un type</option>
+            <option value="Petit avion">Petit avion (Cessna 172, Piper PA-28)</option>
+            <option value="Avion militaire">Avion militaire (F-16, Rafale)</option>
+            <option value="Moyen-courrier">Avion moyen-courrier (A320, B737)</option>
+            <option value="Long-courrier">Avion long-courrier (B777, A350)</option>
+            <option value="Très gros porteur">Très gros porteur (A380, B747)</option>
+          </select>
+          
+          <label>Date de réservation :</label>
+          <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
+          
+          <button type="submit" className="btn-confirm">Confirmer la réservation</button>
+        </form>
+      )}
     </div>
   );
 };

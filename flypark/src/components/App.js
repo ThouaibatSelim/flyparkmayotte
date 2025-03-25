@@ -6,12 +6,14 @@ import Services from './services';
 import APropos from './apropos';
 import Connexion from './connexion';
 import Inscription from './inscription';
-import Navbar from './Navbar';
+import Navbar from './navbar';
+import Footer from './footer';
+import Layout from './layout';
 
 function App() {
   return (
     <Router>
-      <Navbar />
+       <Navbar />
       <div className="content">
         {/* Routes - affichage conditionnel des pages */}
         <Routes>
@@ -23,7 +25,9 @@ function App() {
           <Route path="/inscription" element={<Inscription />} />
         </Routes>
       </div>
-    </Router>
+      <Footer /> {/*Le footer sera affiché en bas de toutes les pages*/}
+
+   </Router>
   );
 }
 
