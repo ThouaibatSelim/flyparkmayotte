@@ -7,6 +7,10 @@ function Footer() {
 
   return (
     <footer className="footer">
+<<<<<<< HEAD
+      <p>&copy;2025 Fly Park Mayotte. Tous droits réservés.</p>
+   </footer>
+=======
       <ol className="contact">
         <li>
           <i className="fa-solid fa-phone"></i>
@@ -46,6 +50,7 @@ function Footer() {
       {/* Affichage de l'année actuelle */}
       <p className="foot">© {year} Fly Park Mayotte - Tous droits réservés</p>
     </footer>
+>>>>>>> ab4a53a0dec3dcc722e0862412fb152645963dac
   );
 }
 

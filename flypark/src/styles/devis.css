@@ -1,0 +1,57 @@
+.devis-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  h2 {
+    text-align: center;
+    color: #01257d;
+  }
+  
+  .devis-form {
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .devis-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+  }
+  
+  .devis-form input,
+  .devis-form select,
+  .devis-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .devis-form textarea {
+    height: 100px;
+    resize: none;
+  }
+  
+  .btn-envoyer {
+    width: 100%;
+    padding: 10px;
+    background-color: #00FFFF;
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .btn-envoyer:hover {
+    background-color: #00cccc;
+  }
+  
