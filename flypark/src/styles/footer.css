@@ -5,8 +5,9 @@ html {
 
 .footer {
     background-color: #c1c6d4;
-    color: white;
+    color: rgb(77, 91, 108);
     text-align: center;
+<<<<<<< HEAD
     padding: 5px;
     height: 40px;
     position: absolute;
@@ -15,3 +16,22 @@ html {
   }
 
   
+=======
+    padding: 10px;
+    bottom: 0;
+    width: 98,5%;
+  }
+
+ol li a{
+  text-decoration: none;
+  font-size: small;
+  color: rgb(77, 91, 108);
+}
+
+/* icones */
+a i{
+  font-size: 20px;
+    color:rgb(77, 91, 108);
+    width: 30px;
+}
+>>>>>>> ab4a53a0dec3dcc722e0862412fb152645963dac
