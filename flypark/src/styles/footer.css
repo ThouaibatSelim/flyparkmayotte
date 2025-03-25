@@ -7,16 +7,6 @@ html {
     background-color: #c1c6d4;
     color: rgb(77, 91, 108);
     text-align: center;
-<<<<<<< HEAD
-    padding: 5px;
-    height: 40px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-  }
-
-  
-=======
     padding: 10px;
     bottom: 0;
     width: 98,5%;
@@ -34,4 +24,3 @@ a i{
     color:rgb(77, 91, 108);
     width: 30px;
 }
->>>>>>> ab4a53a0dec3dcc722e0862412fb152645963dac
