@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
 // Route /api/message
 app.get("/api/message", (req, res) => {
     res.json({ message: "Hello depuis le backend !" });
-    database.query("INSERT INTO utilisateur (nom_utilisateur, prenom_utilisateur, email, motdepasse) VALUES (?, ?, ?, ?)");
+    database.query("INSERT INTO utilisateur (nom_utilisateur, prenom_utilisateur, date_naissance, adresse_mail, numero_telephone, motdepasse) VALUES (?, ?, ?, ?, ?, ?)");
 });
 
 app.listen(5000, () => console.log("Serveur démarré sur http://localhost:5000"));
