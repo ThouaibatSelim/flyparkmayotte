@@ -2,32 +2,13 @@ import React from 'react';
 // import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Accueil from './Accueil';
-=======
-<<<<<<< HEAD
-import Accueil from './Accueil';
-import Reservation from './Reservation';
+import Reservation from './Reservation'; 
 import Services from './Services';
 import APropos from './Apropos';
 import Connexion from './Connexion';
 import Inscription from './Inscription';
 import Navbar from './Navbar';
 import Footer from './Footer';
-<<<<<<< HEAD
-=======
-import Devis from './Devis';
-=======
-import Accueil from './accueil';
->>>>>>> ca0e5f18cf23355e4bf3126349cbd9f3b016676f
-import Reservation from './reservation';
-import Services from './services';
-import APropos from './apropos';
-import Connexion from './connexion';
-import Inscription from './inscription';
-import Navbar from './Navbar';
-import Footer from './footer';
-// import Layout from './layout';
->>>>>>> ab4a53a0dec3dcc722e0862412fb152645963dac
->>>>>>> b6fe6efd5746f13eeffb4e259772ae49c0bc4a29
 
 function App() {
   return (
