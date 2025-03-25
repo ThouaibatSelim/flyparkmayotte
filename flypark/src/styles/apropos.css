@@ -1,0 +1,53 @@
+/* Styles généraux */
+.apropos-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #01257d; /* Bleu marine */
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Titres */
+  h1, h2 {
+    text-align: center;
+    color: #00FFFF; /* Cyan */
+    margin-bottom: 20px;
+  }
+  
+  /* Sections */
+  .histoire, .equipe {
+    margin-bottom: 30px;
+  }
+  
+  /* Liste des membres */
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    margin: 8px 0;
+    font-size: 18px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .apropos-container {
+      width: 90%;
+      padding: 15px;
+    }
+  
+    li {
+      font-size: 16px;
+    }
+  }
+  

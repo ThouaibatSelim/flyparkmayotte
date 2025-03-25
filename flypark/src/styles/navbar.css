@@ -1,21 +1,62 @@
+/* Style général de la navbar */
 .navbar {
-    background-color: #01257d;
-    color: white;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: #01257d;
+  color: white;
+  padding: 15px 20px;
+}
+
+/* Conteneur de la navbar */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo de la navbar */
+.navbar-logo {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+/* Liste des liens */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+/* Liens */
+.navbar-links li {
+  display: inline;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-links a:hover {
+  color: #00FFFF; /* Cyan au survol */
+}
+
+/* Responsive : Affichage en colonne sur mobile */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    text-align: center;
   }
-  
-  .navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
+
+  .navbar-links {
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
   }
-  
-  .navbar ul li a {
-    color: white;
-    text-align: justify;
-    text-decoration: none;
-  }
-  
+}

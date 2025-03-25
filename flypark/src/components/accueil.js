@@ -1,5 +1,6 @@
 import React from 'react';
 import'../styles/accueil.css';
+import Footer from './footer';
 
 
 const Accueil = () => {

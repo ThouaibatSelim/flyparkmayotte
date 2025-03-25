@@ -1,0 +1,50 @@
+.connexion-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  .connexion-container h2 {
+    color: #01257d;
+  }
+  
+  .connexion-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .connexion-container label {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .connexion-container input {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .connexion-container button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #01257d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .connexion-container button:hover {
+    background-color: #00FFFF;
+  }
+  
+  .connexion-container p {
+    margin-top: 10px;
+  }
+  
