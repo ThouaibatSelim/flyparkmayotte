@@ -2,13 +2,6 @@ const express = require("express");
 const cors = require("cors");
 const database = require("./db");
 
-const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    database: "flyparkmayotte",
-    password: "pd+12SQm"
-  });
-
 const app = express();
 
 app.use(session({

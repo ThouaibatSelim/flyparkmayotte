@@ -34,12 +34,15 @@ function Apropos() {
 
       // Liste des membres
       React.createElement("ul", null, [
-        React.createElement("li", { key: "1" }, "👩‍✈️ Directrice : Madame X"),
-        React.createElement("li", { key: "2" }, "📞 Secrétaire : Monsieur Y"),
-        React.createElement("li", { key: "3" }, "📢 Chargé de communication : Madame Z"),
-        React.createElement("li", { key: "4" }, "🛡️ Agents de sécurité : Équipe spécialisée"),
-        React.createElement("li", { key: "5" }, "🧹 Techniciens de surface : Maintenance & propreté"),
-        React.createElement("li", { key: "6" }, "🛰️ Gérant de la tour de contrôle : Expert en aviation"),
+        React.createElement("li", { key: "1" }, "👩‍✈️ Directrices : Tatyana Ali Mdahoma & Thouaïbat Sélim"),
+        React.createElement("li", { key: "2" }, "📞 Secrétaire : Ali Madi"),
+        React.createElement("li", { key: "3" }, "📢 Chargée de communication : Fatima Boina"),
+        React.createElement("li", { key: "4" }, "🛡️ Agents de sécurité : Agence SecurMaoré"),
+        React.createElement("li", { key: "5" }, "🧹 Techniciens de surface : Anziz Abdou"),
+        React.createElement("li", { key: "6" }, "🛰️ Gérante de la tour de contrôle : Rachida Combo"),
+        React.createElement("li", { key: "7" }, "🛰️ Superviseur du Trafic Aérien au Sol : Issa Halidi"),
+        React.createElement("li", { key: "8" }, "🛰️ Hotesse : Mariam Ahamada"),
+        React.createElement("li", { key: "9" }, "🛰️ Steward : Nassur Inzoudine")
       ])
     )
   );

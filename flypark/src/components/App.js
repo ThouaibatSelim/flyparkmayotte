@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { SessionProvider } from "../context/SessionContext";
 
-
 import Accueil from './Accueil';
 import Reservation from './Reservation'; 
 import Services from './Services';
