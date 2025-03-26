@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import '../styles/navbar.css';
+import Login from "./Login";
 
 function Navbar() {
   return (
@@ -12,6 +13,7 @@ function Navbar() {
             <li><a href="/reservation">Réservation</a></li>
             <li><a href="/services">Services</a></li>
             <li><a href="/apropos">À propos</a></li>
+            <li><a href="/login">Login</a></li>
             <li><a href="/connexion">Connexion</a></li>
             <li><a href="/inscription">Inscription</a></li>
         </ul>

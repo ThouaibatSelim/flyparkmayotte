@@ -1,90 +1,87 @@
-import React, { useState } from "react"; // Importation de React et du hook useState
-import "../styles/inscription.css"; // Importation du fichier CSS
+import React, { useState } from "react";
+import "../styles/inscription.css";
 
-// Définition du composant Inscription
 function Inscription() {
-  // Déclaration des états pour stocker les valeurs saisies
   const [nom, setNom] = useState("");
+  const [prenom, setPrenom] = useState("");
   const [email, setEmail] = useState("");
+  const [date_naissance, setDateNaissance] = useState("");
+  const [numero_telephone, setNumeroTelephone] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [message, setMessage] = useState("");
 
-  // Fonction qui se déclenche lors de la soumission du formulaire
-  const handleSubmit = function (e) {
+  const handleSubmit = async (e) => {
     e.preventDefault(); // Empêche le rechargement de la page
+
     if (password !== confirmPassword) {
       alert("Les mots de passe ne correspondent pas !");
       return;
     }
-    console.log("Inscription avec :", nom, email, password);
+
+    const userData = { nom, email, date_naissance, numero_telephone, password };
+
+    try {
+      const response = await fetch("http://localhost:5000/api/inscription", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setMessage("Inscription réussie !");
+        setNom("");
+        setPrenom("");
+        setEmail("");
+        setDateNaissance("");
+        setNumeroTelephone("");
+        setPassword("");
+        setConfirmPassword("");
+      } else {
+        setMessage(data.error || "Une erreur s'est produite.");
+      }
+    } catch (error) {
+      console.error("Erreur :", error);
+      setMessage("Erreur serveur.");
+    }
   };
 
-  // Création de l'interface utilisateur 
-  return React.createElement(
-    "div",
-    { className: "inscription-container" }, // Conteneur principal
-    React.createElement("h2", null, "Inscription"), // Titre de la page
+  return (
+    <div className="inscription-container">
+      <h2>Inscription</h2>
+      {message && <p className="message">{message}</p>}
+      <form onSubmit={handleSubmit}>
+        <label>Nom :</label>
+        <input type="text" value={nom} onChange={(e) => setNom(e.target.value)} required />
 
-    React.createElement(
-      "form",
-      { onSubmit: handleSubmit }, // Formulaire avec la fonction handleSubmit
-      // Label et champ de saisie pour le nom
-      React.createElement("label", null, "Nom :"),
-      React.createElement("input", {
-        type: "text",
-        value: nom,
-        onChange: function (e) {
-          setNom(e.target.value);
-        },
-        required: true,
-      }),
+        <label>Prénom :</label>
+        <input type="text" value={prenom} onChange={(e) => setPrenom(e.target.value)} required />
 
-      // Label et champ de saisie pour l'email
-      React.createElement("label", null, "Email :"),
-      React.createElement("input", {
-        type: "email",
-        value: email,
-        onChange: function (e) {
-          setEmail(e.target.value);
-        },
-        required: true,
-      }),
+        <label>Email :</label>
+        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
 
-      // Label et champ de saisie pour le mot de passe
-      React.createElement("label", null, "Mot de passe :"),
-      React.createElement("input", {
-        type: "password",
-        value: password,
-        onChange: function (e) {
-          setPassword(e.target.value);
-        },
-        required: true,
-      }),
+        <label>Date de Naissance :</label>
+        <input type="date" value={date_naissance} onChange={(e) => setDateNaissance(e.target.value)} required />
 
-      // Label et champ de saisie pour la confirmation du mot de passe
-      React.createElement("label", null, "Confirmer le mot de passe :"),
-      React.createElement("input", {
-        type: "password",
-        value: confirmPassword,
-        onChange: function (e) {
-          setConfirmPassword(e.target.value);
-        },
-        required: true,
-      }),
+        <label>Numéro de Téléphone :</label>
+        <input type="number" value={numero_telephone} onChange={(e) => setNumeroTelephone(e.target.value)} required />
 
-      // Bouton de soumission
-      React.createElement("button", { type: "submit" }, "S'inscrire")
-    ),
-    
-    // Lien vers la page de connexion
-    React.createElement(
-      "p",
-      null,
-      "Déjà inscrit ? ",
-      React.createElement("a", { href: "/connexion" }, "Se connecter")
-    )
+        <label>Mot de passe :</label>
+        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+
+        <label>Confirmer le mot de passe :</label>
+        <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
+
+        <button type="submit">S'inscrire</button>
+      </form>
+
+      <p>Déjà inscrit ? <a href="/connexion">Se connecter</a></p>
+    </div>
   );
 }
 
-// Exportation du composant 
 export default Inscription;

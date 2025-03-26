@@ -2,14 +2,29 @@ const express = require("express");
 const cors = require("cors");
 const database = require("./db");
 
+const db = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    database: "flyparkmayotte",
+    password: "pd+12SQm"
+  });
+
 const app = express();
 
 app.use(session({
-    secret: "monSecretSuperSecurisé", // Clé secrète pour signer la session
+   secret: "monSecretSuperSecurisé", //Clé secrète pour signer la session
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false } // Mettre `true` en HTTPS
+    cookie: { secure: false }  // Mettre `true` en HTTPS
 }));
+
+db.connect((err) => {
+    if (err) {
+      console.error("Erreur de connexion à la base de données:", err);
+      process.exit(1); // Arrêter le serveur si la connexion échoue
+    }
+    console.log("Connexion à la base de données réussie");
+  });
 
 app.use(cors({
     origin: "http://localhost:3000", // URL du frontend
@@ -52,7 +67,26 @@ app.get("/", (req, res) => {
 // Route /api/message
 app.get("/api/message", (req, res) => {
     res.json({ message: "Hello depuis le backend !" });
-    database.query("INSERT INTO utilisateur (nom_utilisateur, prenom_utilisateur, date_naissance, adresse_mail, numero_telephone, motdepasse) VALUES (?, ?, ?, ?, ?, ?)");
 });
+
+// Route API pour l'inscription
+app.post("/api/inscription", (req, res) => {
+    const nom = req.body.nom;
+    const prenom = req.body.prenom;
+    const email = req.body.email;
+    const date_naissance = req.body.date_naissance;
+    const numero_telephone = req.body.numero_telephone;
+    const password = req.body.password;
+
+    const sql = ("INSERT INTO utilisateur (nom_utilisateur, prenom_utilisateur, adresse_mail, date_naissance, numero_telephone, motdepasse) VALUES (?, ?, ?, ?, ?, ?)");
+  
+    db.query(sql, [nom, prenom, email, date_naissance, numero_telephone, password], (err, result) => {
+      if (err) {
+        console.error("Erreur lors de l'inscription :", err);
+        return res.status(500).json({ error: "Erreur lors de l'inscription" });
+      }
+      res.status(201).json({ message: "Utilisateur inscrit avec succès !" });
+    });
+  });
 
 app.listen(5000, () => console.log("Serveur démarré sur http://localhost:5000"));

@@ -1,6 +1,7 @@
 import React from 'react';
-// import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { SessionProvider } from "../context/SessionContext";
+
 
 import Accueil from './Accueil';
 import Reservation from './Reservation'; 
@@ -11,9 +12,12 @@ import Inscription from './Inscription';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import Devis from './Devis';
+import Login from './Login';
+import LoginForm from './LoginForm';
 
 function App() {
   return (
+    <SessionProvider>
     <Router>
        <Navbar />
       <div className="content">
@@ -25,11 +29,14 @@ function App() {
           <Route path="/apropos" element={<APropos />} />
           <Route path="/connexion" element={<Connexion />} />
           <Route path="/inscription" element={<Inscription />} />
+          <Route path="/login" element={<LoginForm />} />
+
         </Routes>
       </div>
       <Footer /> {/*Le footer sera affiché en bas de toutes les pages*/}
 
    </Router>
+   </SessionProvider>
   );
 }
 
