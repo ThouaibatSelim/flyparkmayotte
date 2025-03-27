@@ -29,6 +29,8 @@ function App() {
           <Route path="/connexion" element={<Connexion />} />
           <Route path="/inscription" element={<Inscription />} />
           <Route path="/login" element={<LoginForm />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/devis" element={<Devis />} />
 
         </Routes>
       </div>
