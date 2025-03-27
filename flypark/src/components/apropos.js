@@ -34,9 +34,9 @@ function Apropos() {
 
       // Liste des membres
       React.createElement("ul", null, [
-        React.createElement("li", { key: "1" }, "👩‍✈️ Directrice : Madame X"),
-        React.createElement("li", { key: "2" }, "📞 Secrétaire : Monsieur Y"),
-        React.createElement("li", { key: "3" }, "📢 Chargé de communication : Madame Z"),
+        React.createElement("li", { key: "1" }, "👩‍✈️ Directrice : Madame Aïcha Chamsidine"),
+        React.createElement("li", { key: "2" }, "📞 Secrétaire : Monsieur Abdel Karim"),
+        React.createElement("li", { key: "3" }, "📢 Chargé de communication : Madame Elouise Insa"),
         React.createElement("li", { key: "4" }, "🛡️ Agents de sécurité : Équipe spécialisée"),
         React.createElement("li", { key: "5" }, "🧹 Techniciens de surface : Maintenance & propreté"),
         React.createElement("li", { key: "6" }, "🛰️ Gérant de la tour de contrôle : Expert en aviation"),

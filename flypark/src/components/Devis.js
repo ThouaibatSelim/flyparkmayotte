@@ -3,7 +3,7 @@ import "../styles/devis.css"; // Import du fichier CSS
 
 // Composant Devis pour la demande de devis des services
 const Devis = () => {
-  // États pour stocker les informations du formulaire
+// États pour stocker les informations du formulaire
   const [nom, setNom] = useState("");
   const [email, setEmail] = useState("");
   const [service, setService] = useState("");

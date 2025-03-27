@@ -25,6 +25,7 @@ function App() {
           <Route path="/apropos" element={<APropos />} />
           <Route path="/connexion" element={<Connexion />} />
           <Route path="/inscription" element={<Inscription />} />
+          <Route path="/devis" element={<Devis />} />
         </Routes>
       </div>
       <Footer /> {/*Le footer sera affiché en bas de toutes les pages*/}
