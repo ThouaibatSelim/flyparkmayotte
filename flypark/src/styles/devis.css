@@ -35,6 +35,22 @@
     border-radius: 5px;
   }
   
+  .checkbox-group {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+  }
+  
+  .checkbox-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .checkbox-item input {
+    margin-right: 10px;
+  }
+  
   .devis-form textarea {
     height: 100px;
     resize: none;

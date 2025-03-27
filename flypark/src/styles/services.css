@@ -47,25 +47,32 @@
   
   /* Conteneur du bouton devis */
   .devis-container {
-    margin-top: 30px;
+    margin-top: 25px;
   }
   
-  /* Bouton devis */
+
   .btn-devis {
-    padding: 12px 20px;
-    background-color: #01257d;
-    color: white;
-    border: none;
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #00FFFF;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
     border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+    text-align: center;
   }
+  
+  .btn-devis:hover {
+    background-color: #00cccc;
+  }
+  
+
   
   /* Effet au survol du bouton */
   .btn-devis:hover {
     background-color: #00FFFF;
     color: #01257d;
+    transform: scale(1.05);
   }
   
   /* Responsive */
