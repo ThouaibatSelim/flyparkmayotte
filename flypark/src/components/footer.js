@@ -10,11 +10,11 @@ function Footer() {
       <ol className="contact">
         <li>
           <i className="fa-solid fa-phone"></i>
-          &nbsp; <a href="tel:+262992019">0269-17-17-17</a>&nbsp;
+          &nbsp; <a href="tel:+26217171">0269-17-17-17</a>&nbsp;
         </li>
         <li>
           <i className="fa-solid fa-envelope"></i>
-          &nbsp;<a href="mailto:contact.ts9@gmail.com">contact.flyparkmayotte@gmail.com</a>
+          &nbsp;<a href="mailto:contact.flyparkmayotte@gmail.com">contact.flyparkmayotte@gmail.com</a>
         </li>
         <li>
           <i className="fa-solid fa-house"></i>
@@ -36,6 +36,9 @@ function Footer() {
       </a>
       <a href="https://www.youtube.com/?app=desktop&hl=FR" target="_blank" rel="noopener noreferrer">
         <i className="fa-brands fa-youtube"></i>
+      </a>
+      <a href="https://www.tiktok.com/discover?lang=fr" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-tiktok"></i>
       </a>
 
       <br />
