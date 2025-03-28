@@ -12,11 +12,11 @@ const Reservation = () => {
   useEffect(() => {
     // Simulation de données, en vrai il faudra récupérer depuis une API
     const parkingData = [
-      { id: 1, numero: "07260", dimensions: "20m x 30m", prix: "50€/jour", disponibilite: "10 avril" },
-      { id: 2, numero: "08982",dimensions: "25m x 35m", prix: "60€/jour", disponibilite: "12 avril" },
-      { id: 3, numero: "02551",dimensions: "30m x 40m", prix: "75€/jour", disponibilite: "Indisponible" },
-      { id: 4, numero: "09461",dimensions: "35m x 45m", prix: "90€/jour", disponibilite: "15 avril" },
-      { id: 5, numero: "04847",dimensions: "50m x 60m", prix: "100€/jour", disponibilite: "Indisponible" },
+      { id: 1, numero: "7260", dimensions: "20mx30m", prix: "50€/jour", disponibilite: "10 avril" },
+      { id: 2, numero: "8982",dimensions: "25mx35m", prix: "60€/jour", disponibilite: "12 avril" },
+      { id: 3, numero: "2551",dimensions: "30mx40m", prix: "75€/jour", disponibilite: "Indisponible" },
+      { id: 4, numero: "9461",dimensions: "35mx45m", prix: "90€/jour", disponibilite: "15 avril" },
+      { id: 5, numero: "4847",dimensions: "50mx60m", prix: "100€/jour", disponibilite: "Indisponible" },
     ];
     setParkings(parkingData);
   }, []);
@@ -36,7 +36,7 @@ const Reservation = () => {
       <ul className="parking-list">
         {parkings.map((parking) => (
           <li key={parking.id} className="parking-item">
-            Numéro: {parking.numero} | 📏 Dimensions: {parking.dimensions} | 💰 Prix: {parking.prix} | 📅 Disponibilité: {parking.disponibilite}
+            N°: {parking.numero} | 📏 Dimensions: {parking.dimensions} | 💰 Prix: {parking.prix} | 📅 Disponibilité: {parking.disponibilite}
             <button className="btn-reserver" onClick={() => handleReserve(parking)}>Réserver</button>
           </li>
         ))}

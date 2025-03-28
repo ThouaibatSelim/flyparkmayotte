@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "../styles/inscription.css";
+import { Link } from "react-router-dom";
+
 
 function Inscription() {
   const [nom, setNom] = useState("");
@@ -19,10 +21,10 @@ function Inscription() {
       return;
     }
 
-    const userData = { nom, email, date_naissance, numero_telephone, password };
+    const userData = { nom, prenom, email, date_naissance, numero_telephone, password };
 
     try {
-      const response = await fetch("http://localhost:5000/api/inscription", {
+      const response = await fetch("http://127.0.0.1:5000/api/inscription", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -79,7 +81,8 @@ function Inscription() {
         <button type="submit">S'inscrire</button>
       </form>
 
-      <p>Déjà inscrit ? <a href="/connexion">Se connecter</a></p>
+      <p>Déjà inscrit ? <Link to="/connexion">Se connecter</Link></p>
+
     </div>
   );
 }

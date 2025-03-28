@@ -35,7 +35,7 @@ const Services = () => {
 
       {/* Bouton pour demander un devis */}
       <div className="devis-container">
-        <button className="btn-devis">Demander un devis</button>
+        <button className="btn-devis" >Demander un devis</button>
       </div>
     </div>
   );
