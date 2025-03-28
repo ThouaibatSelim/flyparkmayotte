@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import '../styles/navbar.css';
-import Login from "./Login";
+// import Login from "./Login";
 
 function Navbar() {
   return (

@@ -15,7 +15,7 @@ CREATE TABLE place_parking (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, numero_p
 CREATE TABLE historique (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, id_reservation INT NOT NULL, FOREIGN KEY (id_reservation) REFERENCES reservation(id));
 
 -- Réservation
-CREATE TABLE reservation (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, id_utilisateur INT FOREIGN KEY (id_reservation) REFERENCES utilisateur(id) NOT NULL, numero_reservation INT, id_place_parking INT FOREIGN KEY (id_place_parking) REFERENCES utilisateur(id) NOT NULL, date_reservation DATE, confirmation BOOLEAN);
+CREATE TABLE reservation (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, id_utilisateur INT NOT NULL, FOREIGN KEY (id_reservation) REFERENCES utilisateur(id), numero_reservation INT, id_place_parking INT FOREIGN KEY (id_place_parking) REFERENCES utilisateur(id) NOT NULL, date_reservation DATE, confirmation BOOLEAN);
 
 -- Equipe
 CREATE TABLE equipe (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, prenom VARCHAR(200), nom VARCHAR(200), poste VARCHAR(255));

@@ -1,64 +1,49 @@
-import React, { useState } from "react"; // Importation de React et du hook useState
-import "../styles/connexion.css"; // Importation du fichier CSS
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "../styles/connexion.css";
 
-// Définition du composant Connexion
 function Connexion() {
-  // Déclaration des états pour stocker l'email et le mot de passe
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
+    const navigate = useNavigate();
 
-  // Fonction qui se déclenche lors de la soumission du formulaire
-  const handleSubmit = function (e) {
-    e.preventDefault(); // Empêche le rechargement de la page
-    console.log("Connexion avec :", email, password); // Affiche les valeurs saisies dans la console
-  };
+    const handleSubmit = async function (e) {
+        e.preventDefault();
+        try {
+            const response = await fetch("http://localhost:5000/connexion", { // URL correcte
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ email, password }),
+                credentials: "include", // Important
+            });
+            const data = await response.json();
+            if (response.ok && data.message === "Connexion réussie") {
+                navigate("/profil");
+            } else {
+                setError(data.error || "Email ou mot de passe incorrect.");
+            }
+        } catch (error) {
+            setError("Erreur de connexion. Veuillez réessayer.");
+        }
+    };
 
-  // Création de l'interface utilisateur
-  return React.createElement(
-    "div",
-    { className: "connexion-container" }, // Conteneur principal
-    React.createElement("h2", null, "Connexion"), // Titre de la page de connexion
-    React.createElement(
-      "form",
-      { onSubmit: handleSubmit }, // Formulaire avec la fonction handleSubmit
-      // Label et champ de saisie pour l'email
-      React.createElement("label", null, "Email :"),
-      React.createElement("input", {
-        type: "email",
-        value: email,
-        onChange: function (e) {
-          setEmail(e.target.value); // Met à jour l'état de l'email
-        },
-        required: true, // Champ obligatoire
-      }),
-
-      // Label et champ de saisie pour le mot de passe
-      React.createElement("label", null, "Mot de passe :"),
-      React.createElement("input", {
-        type: "password",
-        value: password,
-        onChange: function (e) {
-          setPassword(e.target.value); // Met à jour l'état du mot de passe
-        },
-        required: true, // Champ obligatoire
-      }),
-
-      // Bouton de soumission du formulaire
-      React.createElement(
-        "button",
-        { type: "submit" },
-        "Se connecter"
-      )
-    ),
-    // Lien vers la page d'inscription
-    React.createElement(
-      "p",
-      null,
-      "Pas encore inscrit ? ",
-      React.createElement("a", { href: "/inscription" }, "Créer un compte")
-    )
-  );
+    return (
+        <div className="connexion-container">
+            <h2>Connexion</h2>
+            <form onSubmit={handleSubmit}>
+                <label>Email :</label>
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                <label>Mot de passe :</label>
+                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                <button type="submit">Se connecter</button>
+                {error && <p className="error">{error}</p>}
+            </form>
+            <p>Pas encore inscrit ? <a href="/inscription">Créer un compte</a></p>
+        </div>
+    );
 }
 
-// Exportation du composant 
 export default Connexion;

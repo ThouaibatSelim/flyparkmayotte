@@ -13,6 +13,7 @@ import Footer from './Footer';
 import Devis from './Devis';
 import Login from './Login';
 import LoginForm from './LoginForm';
+import Profil from './Profil';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/login" element={<LoginForm />} />
           <Route path="/login" element={<Login />} />
           <Route path="/devis" element={<Devis />} />
+          <Route path="/profil" element={<Profil />} />
 
         </Routes>
       </div>

@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../styles/footer.css";
 
 function Footer() {
   // État pour stocker l'année actuelle
-  const [year, setYear] = useState(new Date().getFullYear());
+  const [year] = useState(new Date().getFullYear());
 
   return (
     <footer className="footer">
@@ -18,7 +18,7 @@ function Footer() {
         </li>
         <li>
           <i className="fa-solid fa-house"></i>
-          &nbsp;<a href="#">7 rue Sana, 97615 Pamandzi</a>
+          &nbsp;<a href="https://maps.app.goo.gl/zQauY4LcovZWCtXD7">7 rue Sana, 97615 Pamandzi</a>
         </li>
       </ol>
 <br />
