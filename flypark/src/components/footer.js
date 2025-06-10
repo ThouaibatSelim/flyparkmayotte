@@ -18,7 +18,7 @@ function Footer() {
         </li>
         <li>
           <i className="fa-solid fa-house"></i>
-          &nbsp;<a href="https://maps.app.goo.gl/zQauY4LcovZWCtXD7">7 rue Sana, 97615 Pamandzi</a>
+          &nbsp;<a href="https://maps.app.goo.gl/zQauY4LcovZWCtXD7">Aéroport de Mayotte, 97615 Pamandzi</a>
         </li>
       </ol>
 <br />

@@ -1,25 +1,32 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 import '../styles/navbar.css';
-// import Login from "./Login";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-           <nav class="navbar">
-            <div class="navbar-container">
-            <a href="/" class="navbar-logo">Fly Park Mayotte</a>
-            <ul class="navbar-links">
-            <li><a href="/">Accueil</a></li>
-            <li><a href="/reservation">Réservation</a></li>
-            <li><a href="/services">Services</a></li>
-            <li><a href="/apropos">À propos</a></li>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/connexion">Connexion</a></li>
-            <li><a href="/inscription">Inscription</a></li>
+    <nav className="navbar">
+      <div className="navbar-container">
+        <Link to="/" className="navbar-logo">Fly Park Mayotte</Link>
+        <ul className="navbar-links">
+          <li><Link to="/">Accueil</Link></li>
+          <li><Link to="/reservation">Réservation</Link></li>
+          <li><Link to="/services">Services</Link></li>
+          <li><Link to="/apropos">À propos</Link></li>
+          {/* <li><Link to="/login">Login</Link></li> */}
+          <li><Link to="/connexion">Connexion</Link></li>
+          <li><Link to="/inscription">Inscription</Link></li>
+          <li>
+            <Link to="/profil" className="profile-icon-link" aria-label="Profil">
+              <FontAwesomeIcon icon={faUser} style={{ cursor: 'pointer' }} />
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>
   )
-} 
+}
 
 export default Navbar;
+

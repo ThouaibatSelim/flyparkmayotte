@@ -6,6 +6,12 @@ const database = require("./db");
 
 const app = express();
 
+app.use( cors({
+    origin: "http://localhost:3000", // URL frontend
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -18,6 +24,7 @@ app.use(
   })
 );
 
+
 database.connect((err) => {
   if (err) {
     console.error("Erreur de connexion à la base de données:", err);
@@ -26,11 +33,7 @@ database.connect((err) => {
   console.log("Connexion à la base de données réussie");
 });
 
-app.use( cors({
-    origin: "http://localhost:3000", // URL frontend
-    credentials: true,
-  })
-);
+
 
 app.post("/connexion", async (req, res) => {
   const { email, password } = req.body;
@@ -57,8 +60,17 @@ app.post("/connexion", async (req, res) => {
       return res.status(401).json({ error: "Mot de passe incorrect" });
     }
 
-    req.session.user = { id: user.id, name: user.nom_utilisateur };
-    res.json({ message: "Connexion réussie", user: req.session.user });
+    req.session.user = { 
+      id: user.id, 
+      nom: user.nom_utilisateur, 
+      prenom: user.prenom_utilisateur,
+      email: user.adresse_mail
+    };
+
+    console.log("Session sauvegardée :", req.session.user);
+
+  res.status(200).json({ message: "Connexion réussie", user: req.session.user });
+
   });
 });
 

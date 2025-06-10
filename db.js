@@ -4,7 +4,7 @@ const mysql = require('mysql2');
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'pd+12SQm',
+    password: 'MyThoua!L922',
     port: 3306,
     database: 'flyparkmayotte'
 });
@@ -15,7 +15,6 @@ connection.connect((erreur) => {
         console.log(erreur);
         return;
     }
-    console.log("Connexion à la base de données réussie");
 });
 
 // exporte la connection

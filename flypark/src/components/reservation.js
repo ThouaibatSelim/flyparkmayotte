@@ -44,7 +44,7 @@ const Reservation = () => {
 
       {selectedParking && (
         <form className="reservation-form" onSubmit={handleSubmit}>
-          <h3>Réservation pour {selectedParking.dimensions}</h3>
+          <h3>Réservation pour {selectedParking.numero}</h3>
           <label>Nom du pilote :</label>
           <input type="text" value={nom} onChange={(e) => setNom(e.target.value)} required />
           
