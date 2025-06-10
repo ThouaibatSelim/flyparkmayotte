@@ -11,8 +11,6 @@ import Inscription from './Inscription';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import Devis from './Devis';
-import Login from './Login';
-import LoginForm from './LoginForm';
 import Profil from './Profil';
 
 function App() {
@@ -29,8 +27,6 @@ function App() {
           <Route path="/apropos" element={<APropos />} />
           <Route path="/connexion" element={<Connexion />} />
           <Route path="/inscription" element={<Inscription />} />
-          <Route path="/login" element={<LoginForm />} />
-          <Route path="/login" element={<Login />} />
           <Route path="/devis" element={<Devis />} />
           <Route path="/profil" element={<Profil />} />
 

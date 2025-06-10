@@ -113,8 +113,7 @@
 }
 
 .sidenav a:hover {
-  background-color: #00FFFF;
-  color: #01257d;
+color: #00FFFF;
   border-radius: 5px;
 }
 
@@ -158,10 +157,13 @@
   font-size: 16px;
   transition: background-color 0.3s ease;
   display: block;
-  margin: 40px auto; /* Centre le bouton horizontalement + espace autour */
+  text-decoration: none;
+  margin: 20px auto; 
 }
 
+
 .submit-btn:hover {
-  background-color: #00FFFF;
-  color: #01257d;
+color: #00FFFF;
+text-align: right;
+font-size: 16px;
 }

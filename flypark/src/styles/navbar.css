@@ -1,20 +1,18 @@
-/* Style général de la navbar */
+/* --- NAVBAR DE BASE --- */
 .navbar {
   background-color: #01257d;
   color: white;
   padding: 15px 20px;
+  position: relative;
+  z-index: 1000;
 }
 
-/* Conteneur de la navbar */
 .navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
-/* Logo de la navbar */
 .navbar-logo {
   font-size: 20px;
   font-weight: bold;
@@ -22,7 +20,7 @@
   color: white;
 }
 
-/* Liste des liens */
+/* --- LINKS --- */
 .navbar-links {
   list-style: none;
   display: flex;
@@ -31,7 +29,6 @@
   margin: 0;
 }
 
-/* Liens */
 .navbar-links li {
   display: inline;
 }
@@ -44,19 +41,74 @@
 }
 
 .navbar-links a:hover {
-  color: #00FFFF; /* Cyan au survol */
+  color: #00FFFF;
 }
 
-/* Responsive : Affichage en colonne sur mobile */
+/* --- BURGER --- */
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+}
+
+/* --- SIDEBAR POUR MOBILE --- */
 @media (max-width: 768px) {
   .navbar-container {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .navbar-links {
+    display: none;
     flex-direction: column;
-    gap: 10px;
-    padding-top: 10px;
+    background-color: #01257d;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 20px;
+    z-index: 1001;
   }
+
+  .navbar-links.show {
+    display: flex;
+  }
+
+  .burger {
+    display: flex;
+  }
+}
+
+.navbar-profile-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navbar-profile-link:hover {
+  color: #00FFFF;
+}
+
+
+.navbar-profile-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navbar-profile-link:hover {
+  color: #00FFFF;
 }

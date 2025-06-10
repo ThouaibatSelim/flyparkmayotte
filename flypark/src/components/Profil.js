@@ -7,28 +7,41 @@ function Profil() {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
-useEffect(() => {
-  fetch("http://localhost:5000/session", {
-    credentials: "include",
-  })
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("Non connecté");
-      }
+  useEffect(() => {
+    fetch("http://localhost:5000/session", {
+      credentials: "include",
     })
-    .then((data) => {
-      setUser(data.user); // ✅ Ici
-      console.log("User reçu :", data.user);
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Non connecté");
+        }
+      })
+      .then((data) => {
+        setUser(data.user);
+        console.log("User reçu :", data.user);
+      })
+      .catch((error) => {
+        console.error("Erreur de session :", error);
+        navigate("/connexion");
+      });
+  }, [navigate]);
+
+  const handleLogout = () => {
+    fetch("http://localhost:5000/logout", {
+      method: "POST",
+      credentials: "include",
     })
-    .catch((error) => {
-      console.error("Erreur de session :", error);
-      navigate("/connexion");
-    });
-}, [navigate]);
-
-
+      .then((res) => {
+        if (res.ok) {
+          navigate("/"); // redirection vers l'accueil
+        } else {
+          console.error("Erreur lors de la déconnexion");
+        }
+      })
+      .catch((err) => console.error("Erreur réseau :", err));
+  };
 
   const openNav = () => setIsOpen(true);
   const closeNav = () => setIsOpen(false);
@@ -38,25 +51,38 @@ useEffect(() => {
   }
 
   return (
+    
     <div className="relative">
-      <br></br>
-      <br></br>
-      <button className="open-btn" onClick={openNav} aria-label="Ouvrir la navigation">
+      <br />
+      <br />
+      <button
+        className="open-btn"
+        onClick={openNav}
+        aria-label="Ouvrir la navigation"
+      >
         ☰
       </button>
       <br /> <br />
 
       <div id="mySidenav" className={`sidenav ${isOpen ? "open" : ""}`}>
         <button
+        
           className="closebtn"
           onClick={closeNav}
           aria-label="Fermer la navigation"
           style={{ background: "none", border: "none", fontSize: "2rem", cursor: "pointer" }}
         >
+          
           &times;
         </button>
+          <br />
+          <br />
+          <br />
         <ol className="profilnav">
+        
+
           <li>
+            
             <strong>Profil de : &nbsp; </strong> {user.prenom} {user.nom}
           </li>
           <br />
@@ -75,9 +101,20 @@ useEffect(() => {
             </Link>
           </li>
           <li>
-            <Link to="/logout">
-              <strong>Se déconnecter</strong>
-            </Link>
+            <button
+              onClick={handleLogout}
+              style={{
+                background: "none",
+                border: "none",
+                padding: 0,
+                cursor: "pointer",
+                fontWeight: "bold",
+                textAlign: "right"
+              }}
+              aria-label="Se déconnecter"
+            >
+              Se déconnecter
+            </button>
           </li>
         </ol>
       </div>
@@ -92,10 +129,8 @@ useEffect(() => {
         <br />
       </div>
 
-      <button className="submit-btn">
-        <Link to="/logout" style={{ color: "inherit", textDecoration: "none" }}>
-          <strong>Se déconnecter</strong>
-        </Link>
+      <button className="submit-btn" >
+        <strong>Se déconnecter</strong>
       </button>
       <br />
       <br />

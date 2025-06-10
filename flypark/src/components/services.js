@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/services.css"; // Import du fichier CSS
 
 const Services = () => {
@@ -35,7 +36,9 @@ const Services = () => {
 
       {/* Bouton pour demander un devis */}
       <div className="devis-container">
-        <button className="btn-devis" >Demander un devis</button>
+        <Link to="/devis">
+          <button className="btn-devis">Demander un devis</button>
+        </Link>
       </div>
     </div>
   );
