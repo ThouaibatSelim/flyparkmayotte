@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/connexion.css";
 
@@ -8,27 +8,32 @@ function Connexion() {
     const [error, setError] = useState("");
     const navigate = useNavigate();
 
-    const handleSubmit = async function (e) {
-        e.preventDefault();
-        try {
-            const response = await fetch("http://localhost:5000/connexion", { // URL correcte
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ email, password }),
-                credentials: "include", // Important
-            });
-            const data = await response.json();
-            if (response.ok && data.message === "Connexion réussie") {
-                navigate("/profil");
-            } else {
-                setError(data.error || "Email ou mot de passe incorrect.");
-            }
-        } catch (error) {
-            setError("Erreur de connexion. Veuillez réessayer.");
+const handleSubmit = async function (e) {
+    e.preventDefault();
+    try {
+        const response = await fetch("http://localhost:5000/connexion", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email, password }),
+            credentials: "include",
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.message === "Connexion réussie") {
+            localStorage.setItem("isLoggedIn", "true"); // <- AJOUT ICI
+            localStorage.setItem("userId", data.userId);
+            navigate("/profil");
+            localStorage.setItem("isLoggedIn", "true");
+        } else {
+            setError(data.error || "Email ou mot de passe incorrect.");
         }
-    };
+    } catch (error) {
+        setError("Erreur de connexion. Veuillez réessayer.");
+    }
+};
 
     return (
         <div className="connexion-container">

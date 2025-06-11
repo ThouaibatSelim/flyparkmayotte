@@ -12,7 +12,7 @@ const Devis = () => {
   // Fonction exécutée lors de la soumission du formulaire
   const handleSubmit = (e) => {
     e.preventDefault(); // Empêche le rechargement de la page
-    alert(`Devis demandé pour ${service} par ${nom}`);
+    alert(`Votre devis vous sera envoyé par mail pour ${service} par ${nom}`);
   };
 
   return (

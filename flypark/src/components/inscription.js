@@ -56,6 +56,13 @@ function Inscription() {
 
   return (
     <div className="inscription-container">
+            <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+
       <h2>Inscription</h2>
       {message && <p className="message">{message}</p>}
       <form onSubmit={handleSubmit}>

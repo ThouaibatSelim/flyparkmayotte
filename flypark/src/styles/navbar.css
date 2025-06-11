@@ -98,17 +98,3 @@
 .navbar-profile-link:hover {
   color: #00FFFF;
 }
-
-
-.navbar-profile-link {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-}
-
-.navbar-profile-link:hover {
-  color: #00FFFF;
-}

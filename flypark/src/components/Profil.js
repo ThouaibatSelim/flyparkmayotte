@@ -53,8 +53,11 @@ function Profil() {
   return (
     
     <div className="relative">
+
       <br />
       <br />
+
+
       <button
         className="open-btn"
         onClick={openNav}
@@ -91,6 +94,10 @@ function Profil() {
           </li>
           <br />
           <li>
+            <strong>Numéro de téléphone : &nbsp;</strong> {user.numero}
+          </li>
+          <br />
+          <li>
             <strong>Mot de passe : &nbsp; </strong> ************
           </li>
           <br />
@@ -101,20 +108,13 @@ function Profil() {
             </Link>
           </li>
           <li>
-            <button
-              onClick={handleLogout}
-              style={{
-                background: "none",
-                border: "none",
-                padding: 0,
-                cursor: "pointer",
-                fontWeight: "bold",
-                textAlign: "right"
-              }}
-              aria-label="Se déconnecter"
-            >
-              Se déconnecter
-            </button>
+          <button 
+            onClick={handleLogout}
+            className="logout-link"
+          >
+            Se déconnecter
+          </button>
+
           </li>
         </ol>
       </div>
@@ -129,7 +129,7 @@ function Profil() {
         <br />
       </div>
 
-      <button className="submit-btn" >
+      <button className="submit-btn" onClick={handleLogout}>
         <strong>Se déconnecter</strong>
       </button>
       <br />

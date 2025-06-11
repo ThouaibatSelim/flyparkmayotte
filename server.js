@@ -64,7 +64,8 @@ app.post("/connexion", async (req, res) => {
       id: user.id, 
       nom: user.nom_utilisateur, 
       prenom: user.prenom_utilisateur,
-      email: user.adresse_mail
+      email: user.adresse_mail,
+      numero: user.numero_telephone
     };
 
     console.log("Session sauvegardée :", req.session.user);
@@ -132,5 +133,32 @@ app.post("/api/inscription", async (req, res) => {
 
   
 });
+
+app.get("/utilisateur/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const [result] = await db.query("SELECT * FROM utilisateurs WHERE id = ?", [id]);
+    res.json(result[0]);
+  } catch (err) {
+    res.status(500).json({ error: "Erreur serveur" });
+  }
+});
+
+app.put("/modifier-profil", (req, res) => {
+  const userId = req.session.userId;
+  const { nom, prenom, email, telephone, } = req.body;
+
+  connection.query(
+    "UPDATE utilisateurs SET nom_utilisateur = ?, prenom_utilisateur = ?, adresse_mail = ?, numero_telephone = ? WHERE id = ?",
+    [nom, prenom, email, telephone, userId],
+    (err, results) => {
+      if (err) return res.status(500).json({ error: "Erreur de mise à jour" });
+      res.json({ message: "Profil mis à jour avec succès" });
+    }
+  );
+});
+
+
+
 
 app.listen(5000, () => console.log("Serveur démarré sur http://localhost:5000"));
